@@ -86,3 +86,8 @@ variable "virtual_machine_sku" {
 variable "tags" {
   type = map(string)
 }
+
+variable "vm_count" {
+  type    = bool
+  default = false
+}
