@@ -22,7 +22,7 @@ module "virtual_network" {
 module "virtual_machine" {
   source  = "Azure/avm-res-compute-virtualmachine/azurerm"
   version = "0.18.1"
-
+  count    = var.vm_count ? 1 : 0
   resource_group_name        = local.resource_group_name
   os_type                    = "linux"
   name                       = local.resource_names.virtual_machine_name
@@ -52,3 +52,4 @@ module "virtual_machine" {
 
   tags = var.tags
 }
+
